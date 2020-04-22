@@ -4,18 +4,20 @@ import runtimeEnv from '@mars/heroku-js-runtime-env';
 function moviesFetched(movies) {
     return {
         type: actionTypes.FETCH_MOVIES,
-        movies: movies
+        movies: movies.movies
     }
 }
 
 function movieFetched(movie) {
+    console.log(movie);
     return {
         type: actionTypes.FETCH_MOVIE,
-        selectedMovie: movie
+        selectedMovie: movie.movie
     }
 }
 
 function movieSet(movie) {
+    console.log(movie);
     return {
         type: actionTypes.SET_MOVIE,
         selectedMovie: movie
@@ -23,6 +25,7 @@ function movieSet(movie) {
 }
 
 export function setMovie(movie) {
+    console.log(movie);
     return dispatch => {
         dispatch(movieSet(movie))
     }
